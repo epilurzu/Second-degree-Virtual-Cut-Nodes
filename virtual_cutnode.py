@@ -9,10 +9,6 @@ print(graph.count_cut_nodes)  #569
 virtual_cut_nodes = dict()
 
 for parent_node in graph.nodes:
-
-    if graph.is_cutnode(parent_node):
-        continue
-
     graph_i = Graph.get_graph_without_node(graph, parent_node)
     graph_i.compute_cut_nodes()
 
