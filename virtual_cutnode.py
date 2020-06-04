@@ -1,6 +1,8 @@
-graph = Graph.get_graph_from_layer(path_to_ecological_corridor)  #with open source library QGIS
+#with open source library QGIS
+graph = Graph.get_graph_from_layer(path_to_ecological_corridor)
 
-graph.compute_cut_nodes()   #implemented in Java, with open source library JGraphT
+#implemented in Java, with open source library JGraphT
+graph.compute_cut_nodes()
 
 print(graph.count_nodes)      #6995
 print(graph.count_edges)      #17464
@@ -16,6 +18,7 @@ for parent_node in graph.nodes:
         set_a = graph_i.cut_nodes
         set_b = graph.cut_nodes
 
-        virtual_cut_nodes[parent_node] = set_a.difference(set_b) #save in dictionary the parent node and his children
+        #save in dictionary the parent node and his children
+        virtual_cut_nodes[parent_node] = set_a.difference(set_b)
 
 print(virtual_cut_nodes)
